@@ -24,10 +24,10 @@ def index():
 
 def add_customer():
     if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        phone = request.form['phone']
-        orders = request.form['orders']
+        name = request.form.get['name']
+        email = request.form.get['email']
+        phone = request.form.get['phone']
+        orders = request.form.get['orders']
         entry = Customers(Name=name, Email=email, Phone_num=phone, Orders=orders)
         db.session.add(entry)
         db.session.commit()
